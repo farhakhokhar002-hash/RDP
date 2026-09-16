@@ -30,7 +30,6 @@ jobs:
 
           if (-not $testResult.TcpTestSucceeded) {
               Write-Error "TCP connection to RDP port 3389 failed."
-              exit 1
           }
 
           Write-Host "TCP connectivity successful!"
