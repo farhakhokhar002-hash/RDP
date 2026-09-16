@@ -1,0 +1,21 @@
+$testResuIt = Test-NetConnection -ComputerName $env:TAlLSCALE_lP -Port 3389
+if (-not $testResuIt.TcpTestSucceeded) {
+Write-Error 'TCP connection to RDP port 3389 failed"
+exit I
+}
+Write-Host "TCP connectivity successful!"
+
+- name: Maintain Connection
+run: |
+Write-Host "`n===RDP ACCESS==="
+Write-Host "Address: $env:TAlLSCALE_lP"
+Write-Host "Username: RDP"
+Write-Host "Passworrd $(echo $env:RDP_CREDS)"
+write-Host "================== `n"
+
+# Keep runner active indefinitely (or until manually cancelled)
+while ($true) {
+Write-Host "[$(Get-Date)] RDP Active - Use Ctrl+C in workflow to terminate"
+Start-Sleep -Seconds 300
+}
+
