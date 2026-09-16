@@ -5,7 +5,7 @@ exit I
 }
 Write-Host "TCP connectivity successful!"
 
-- name: Maintain Connection
+- name: NetConnection
 run: |
 Write-Host "`n===RDP ACCESS==="
 Write-Host "Address: $env:TAlLSCALE_lP"
